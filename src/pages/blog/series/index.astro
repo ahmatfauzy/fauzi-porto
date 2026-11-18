@@ -11,7 +11,7 @@ import { getAllSeries } from '../../../utils/content-groups';
 import { getUiText } from '../../../utils/ui-text';
 
 const siteConfig = await getSiteConfig();
-const { site, theme } = siteConfig;
+const { site, theme, pages } = siteConfig;
 const palette = theme.palette;
 const seriesMeta = pages.blog.series;
 const series = getAllSeries(await getCollection('blog', ({ data }) => !data.draft));
