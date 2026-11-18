@@ -8,6 +8,8 @@ mood: expert path
 location: ''
 images:
   - '/src/assets/vibe/dicoding-fe.png'
+imageAlts:
+  - 'Dicoding Frontend Developer training certificate.'
 tags: [dicoding, certificate]
 align: left
 size: md

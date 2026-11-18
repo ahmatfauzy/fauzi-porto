@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { title, description, image } = Astro.props;
-const { site, fonts } = await getSiteConfig();
+const { site, fonts, profile, home } = await getSiteConfig();
 const escapedSiteName = site.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const alreadyComposed =
   new RegExp(`^${escapedSiteName}\\s*\\|`).test(title) ||
@@ -21,13 +21,30 @@ const titleWithoutSiteName = title
   .replace(new RegExp(`\\s*[–—-]\\s*${escapedSiteName}\\s*$`), '')
   .trim();
 const pageTitle = alreadyComposed ? title : `${titleWithoutSiteName || site.title} | ${site.title}`;
+const pageDescription = description.trim() || site.description;
+const sameAs = home.navigation
+  .map((item) => item.href)
+  .filter((href) => /^https:\/\//i.test(href));
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${profile.website.replace(/\/?$/, '/')}#person`,
+  name: profile.name,
+  alternateName: profile.handle.replace(/^@/, ''),
+  jobTitle: profile.role,
+  url: profile.website,
+  image: new URL(profile.avatar, Astro.site).href,
+  sameAs,
+};
+const serializedPersonSchema = JSON.stringify(personSchema).replace(/</g, '\\u003c');
 ---
 
 <ThemeBaseHead
   title={pageTitle}
-  description={description}
+  description={pageDescription}
   image={image}
   fallbackImage={FallbackImage}
   site={site}
   fonts={fonts}
 />
+<script type="application/ld+json" set:html={serializedPersonSchema} />

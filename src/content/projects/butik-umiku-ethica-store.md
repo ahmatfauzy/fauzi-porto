@@ -6,6 +6,7 @@ draft: false
 sticky: false
 showHeroImage: true
 heroImage: '/src/assets/projects/butik1.png'
+heroImageAlt: 'Butik Umiku Ethica Store online shop and product management dashboard.'
 icon: globe-2
 authors:
   - name: "Ahmat Fauzi"

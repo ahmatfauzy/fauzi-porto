@@ -6,6 +6,7 @@ draft: false
 sticky: false
 showHeroImage: true
 heroImage: '/src/assets/projects/pawql.png'
+heroImageAlt: 'PawQL lightweight SQL ORM for Node.js.'
 icon: database
 authors:
   - name: "Ahmat Fauzi"

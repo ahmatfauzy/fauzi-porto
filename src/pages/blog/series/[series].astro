@@ -28,12 +28,16 @@ const palette = theme.palette;
 const pageMeta = pages.blog;
 const { series, posts } = Astro.props;
 const ui = getUiText(siteConfig);
+const seriesDescription = `Seri ${series.name}: ${posts
+  .slice(0, 3)
+  .map((post) => post.data.title)
+  .join('; ')}.`;
 ---
 
 <!doctype html>
 <html lang={ui.locale} data-palette={palette}>
   <head>
-    <BaseHead title={`${series.name} | ${site.title}`} description={site.description} />
+    <BaseHead title={`${series.name} | ${site.title}`} description={seriesDescription} />
     <style>
       main {
         width: min(100%, var(--layout-shell-width));

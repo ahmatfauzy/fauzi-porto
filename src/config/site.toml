@@ -49,8 +49,8 @@ maxResults = 6
 [config.pages.blog]
 title = "Blog"
 kicker = "Notebook archive"
-subtitle = ""
-note = ""
+subtitle = "Practical notes on JavaScript, Node.js, Laravel, databases, and deployment by Ahmat Fauzi."
+note = "Browse tutorials and technical notes, organized by topic, series, and publication date."
 postsPerPage = 6
 # Date format template used by date-fns.
 dateFormat = "yyyy-MM-dd"
@@ -62,20 +62,20 @@ coverImageStyle = "mask"
 [config.pages.blog.categories]
 title = "Categories"
 kicker = "Browse notes"
-subtitle = ""
-note = "A quiet index of recurring topics, gathered from article frontmatter."
+subtitle = "Browse Ahmat Fauzi's technical articles by subject."
+note = "Find tutorials and notes grouped by the technologies and topics they cover."
 
 [config.pages.blog.series]
 title = "Series"
 kicker = "Reading paths"
-subtitle = ""
-note = "Connected notes that can be followed in the order they were written."
+subtitle = "Follow connected tutorials and technical notes in sequence."
+note = "Each series groups related articles into a practical reading path."
 
 [config.pages.projects]
 title = "Projects"
 kicker = "Project shelf"
-subtitle = ""
-note = ""
+subtitle = "Selected web applications, developer tools, and full-stack projects by Ahmat Fauzi."
+note = "Project notes describe the goals, technologies, and implementation of each build."
 
 [config.pages.vibe]
 title = "Vibe"

@@ -35,7 +35,12 @@ function withBase(href: string) {
           href={withBase(`/blog/${post.id}/`)}
         >
           {post.data.heroImage && (
-            <SmartImage width={88} height={64} src={post.data.heroImage} alt="" />
+            <SmartImage
+              width={88}
+              height={64}
+              src={post.data.heroImage}
+              alt={post.data.heroImageAlt || post.data.title}
+            />
           )}
           <span>
             <strong>{post.data.title}</strong>

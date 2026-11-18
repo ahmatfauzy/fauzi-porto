@@ -653,7 +653,10 @@ const vibes = await Promise.all(
                       >
                         <SmartImage
                           src={image}
-                          alt=""
+                          alt={
+                            entry.data.imageAlts[imageIndex] ||
+                            `${entry.data.title ?? entry.id}, image ${imageIndex + 1}`
+                          }
                           widths={[360, 520, 720]}
                           sizes="(max-width: 720px) 100vw, 420px"
                           data-zoomable-image-target

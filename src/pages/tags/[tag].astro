@@ -41,12 +41,16 @@ const palette = theme.palette;
 const pageMeta = pages.blog;
 const { tag, page } = Astro.props;
 const ui = getUiText(siteConfig);
+const tagDescription = `Artikel bertopik ${tag.name}: ${tag.posts
+  .slice(0, 2)
+  .map((post) => post.data.title)
+  .join('; ')}.`;
 ---
 
 <!doctype html>
 <html lang={ui.locale} data-palette={palette}>
   <head>
-    <BaseHead title={`${tag.name} | ${site.title}`} description={site.description} />
+    <BaseHead title={`${tag.name} | ${site.title}`} description={tagDescription} />
     <style>
       main {
         width: min(100%, var(--layout-shell-width));

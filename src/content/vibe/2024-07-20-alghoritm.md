@@ -8,6 +8,8 @@ mood: certified
 location: ''
 images:
   - '/src/assets/vibe/alghoritm.png'
+imageAlts:
+  - 'Alghoritm training certificate.'
 tags: [certificate]
 align: left
 size: md

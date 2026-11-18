@@ -47,12 +47,16 @@ const { category, page } = Astro.props;
 const ui = getUiText(siteConfig);
 const categoryName =
   category.slug === uncategorizedCategory.slug ? ui.groups.uncategorized : category.name;
+const categoryDescription = `Artikel ${categoryName}: ${page.data
+  .slice(0, 2)
+  .map((post) => post.data.title)
+  .join('; ')}.`;
 ---
 
 <!doctype html>
 <html lang={ui.locale} data-palette={palette}>
   <head>
-    <BaseHead title={`${categoryName} | ${site.title}`} description={site.description} />
+    <BaseHead title={`${categoryName} | ${site.title}`} description={categoryDescription} />
     <style>
       main {
         width: min(100%, var(--layout-shell-width));
@@ -73,8 +77,8 @@ const categoryName =
       <BlogArchive
         page={page}
         headerKicker={pageMeta.kicker}
-        headerTitle={pageMeta.title}
-        headerSubtitle={pageMeta.subtitle}
+        headerTitle={categoryName}
+        headerSubtitle={`Artikel tentang ${categoryName}.`}
         headerNote={pageMeta.note}
         coverImageStyle={pageMeta.coverImageStyle}
       >

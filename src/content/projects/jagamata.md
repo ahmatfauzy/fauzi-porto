@@ -6,6 +6,7 @@ draft: false
 sticky: false
 showHeroImage: true
 heroImage: '/src/assets/projects/jagamata.png'
+heroImageAlt: 'Jagamata eye health application interface.'
 icon: palette
 authors:
   - name: "Ahmat Fauzi"

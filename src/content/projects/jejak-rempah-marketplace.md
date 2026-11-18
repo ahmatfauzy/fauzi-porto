@@ -6,6 +6,7 @@ draft: false
 sticky: false
 showHeroImage: true
 heroImage: '/src/assets/projects/jrm1.png'
+heroImageAlt: 'Jejak Rempah tourism marketplace and management application.'
 icon: layers-3
 authors:
   - name: "Ahmat Fauzi"

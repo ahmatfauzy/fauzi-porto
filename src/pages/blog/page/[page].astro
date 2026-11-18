@@ -47,6 +47,10 @@ const palette = theme.palette;
 const htmlLang = getHtmlLang(siteConfig);
 const pageMeta = pages.blog;
 const { page, postOffset } = Astro.props;
+const pageDescription = `${pageMeta.subtitle} Page ${page.currentPage} includes: ${page.data
+  .slice(0, 2)
+  .map((post) => post.data.title)
+  .join('; ')}.`;
 ---
 
 <!doctype html>
@@ -54,7 +58,7 @@ const { page, postOffset } = Astro.props;
   <head>
     <BaseHead
       title={`${pageMeta.title} | Page ${page.currentPage} | ${site.title}`}
-      description={pageMeta.subtitle}
+      description={pageDescription}
     />
     <style>
       main {

@@ -111,7 +111,12 @@ function withBase(href: string) {
           </div>
           {post.data.heroImage && (
             <a class="thumb-wrap" href={withBase(`/blog/${post.id}/`)} aria-label={post.data.title}>
-              <SmartImage width={520} height={360} src={post.data.heroImage} alt="" />
+              <SmartImage
+                width={520}
+                height={360}
+                src={post.data.heroImage}
+                alt={post.data.heroImageAlt || post.data.title}
+              />
             </a>
           )}
         </article>

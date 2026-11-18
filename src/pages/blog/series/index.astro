@@ -11,9 +11,9 @@ import { getAllSeries } from '../../../utils/content-groups';
 import { getUiText } from '../../../utils/ui-text';
 
 const siteConfig = await getSiteConfig();
-const { site, theme, pages } = siteConfig;
+const { site, theme } = siteConfig;
 const palette = theme.palette;
-const pageMeta = pages.blog;
+const seriesMeta = pages.blog.series;
 const series = getAllSeries(await getCollection('blog', ({ data }) => !data.draft));
 const ui = getUiText(siteConfig);
 ---
@@ -21,7 +21,7 @@ const ui = getUiText(siteConfig);
 <!doctype html>
 <html lang={ui.locale} data-palette={palette}>
   <head>
-    <BaseHead title={`${pageMeta.title} | ${site.title}`} description={pageMeta.note} />
+    <BaseHead title={`${seriesMeta.title} | ${site.title}`} description={seriesMeta.note} />
     <style>
       main {
         width: min(100%, var(--layout-shell-width));
@@ -65,10 +65,10 @@ const ui = getUiText(siteConfig);
     <BlogTopNav />
     <main data-pagefind-body>
       <BlogArchiveHeader
-        kicker={pageMeta.kicker}
-        title={pageMeta.title}
-        subtitle={pageMeta.subtitle}
-        note={pageMeta.note}
+        kicker={seriesMeta.kicker}
+        title={seriesMeta.title}
+        subtitle={seriesMeta.subtitle}
+        note={seriesMeta.note}
       />
       <GroupNav activeView="series" />
 

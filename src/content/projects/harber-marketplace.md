@@ -6,6 +6,7 @@ draft: false
 sticky: false
 showHeroImage: true
 heroImage: '/src/assets/projects/harber1.png'
+heroImageAlt: 'Harber Marketplace interface for comparing products from online stores.'
 icon: box
 authors:
   - name: "Ahmat Fauzi"

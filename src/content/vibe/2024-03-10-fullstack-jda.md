@@ -8,6 +8,8 @@ mood: top 30
 location: ''
 images:
   - '/src/assets/vibe/fullstack-jda.png'
+imageAlts:
+  - 'Full Stack Developer training certificate from JDA and Komdigi.'
 tags: [komdigi, fullstack, certificate]
 align: left
 size: md
